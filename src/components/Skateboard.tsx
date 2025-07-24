@@ -34,7 +34,7 @@ type GLTFResult = GLTF & {
     Truck1: THREE.Mesh
     Truck2: THREE.Mesh
   }
-  materials: {};
+  materials:  Record<string, THREE.Material>;
 }
 
 export function Skateboard({
@@ -49,7 +49,7 @@ export function Skateboard({
     ...props
 }: SkateboardProps) {
     const wheelRefs = useRef<THREE.Object3D[]>([]);
-  const { nodes, materials } = useGLTF('/skateboard.gltf') as GLTFResult;
+  const { nodes } = useGLTF('/skateboard.gltf') as GLTFResult;
 
     const wheelTextures = useTexture(wheelTextureURLs);
   wheelTextures.forEach((texture) => {
