@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Bowlby_One_SC, DM_Mono} from 'next/font/google'
 import "./globals.css";
-import  Header  from "@/components/Header";
 import { SVGFilters } from "@/components/SVGFilters";
-import { Footer } from "@/components/Footer";
 import { createClient } from "@/prismicio";
 
 const bowlby = Bowlby_One_SC({
@@ -11,6 +9,7 @@ const bowlby = Bowlby_One_SC({
   display: "swap",
   variable: "--font-bowlby-sc",
   weight: "400",
+  fallback: ['cursive', 'system-ui'],
 });
 
 const dmMono = DM_Mono({
@@ -18,6 +17,7 @@ const dmMono = DM_Mono({
   display: "swap",
   variable: "--font-dm-mono",
   weight: "500",
+  fallback: ['Monaco', 'Menlo', 'monospace'],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
