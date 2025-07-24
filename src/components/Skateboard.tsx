@@ -46,7 +46,6 @@ export function Skateboard({
     boltColor,
     constantWheelSpin = false,
     pose= "upright",
-    ...props
 }: SkateboardProps) {
     const wheelRefs = useRef<THREE.Object3D[]>([]);
   const { nodes } = useGLTF('/skateboard.gltf') as GLTFResult;
